@@ -1,0 +1,27 @@
+{
+  "name": "mundorum-graph",
+  "version": "1.0.0",
+  "description": "Thematic Oid graph.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mundorum/graph.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mundorum/graph/issues"
+  },
+  "homepage": "https://github.com/mundorum/graph#readme",
+  "devDependencies": {
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4"
+  }
+}
