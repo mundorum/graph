@@ -1,2 +1,2 @@
-npx webpack --config webpack.config.dev.js
-npx webpack --mode=development
+npm run build
+npm run build:dev

@@ -12,7 +12,7 @@ export class Graph {
     this._action = action
     this._bus = bus
 
-    this.cleanGraph()
+    this.clearGraph()
 
     this._presentation = document.createElementNS('http://www.w3.org/2000/svg', 'g')
     this._layout = GraphLayout.create(layout)
@@ -71,7 +71,7 @@ export class Graph {
     if (this._layout != null) { this._layout.organize() }
   }
 
-  cleanGraph () {
+  clearGraph () {
     if (this._nodes)
       for (let n of this._nodes)
         if (n.presentation != null)
@@ -95,7 +95,7 @@ export class Graph {
       this.addPiece('node', gnode)
     }
     for (const edge of graphObj.edges) {
-      this.addPiece('edge', GraphEdge.create(edge, this, this._layout.label))
+      this.addPiece('edge', GraphEdge.create(edge, this))
     }
   }
 

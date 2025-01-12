@@ -1,7 +1,7 @@
 /* A node in an SVG graph
  ************************/
 
-import { Bus } from '/lib/oidlib-dev.js'
+import { Bus } from '/lib/foundation/oidlib-dev.js'
 import { GraphPiece } from './piece'
 
 export class GraphNode extends GraphPiece {

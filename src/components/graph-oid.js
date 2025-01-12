@@ -1,7 +1,7 @@
 /* Graph Oid
   **********/
 
-import { html, Oid, OidUI }  from '/lib/oidlib-dev.js'
+import { html, Oid, OidUI }  from '/lib/foundation/oidlib-dev.js'
 import { GraphNode } from './node.js'
 import { GraphEdge } from './edge.js'
 import { Graph } from './graph.js'
@@ -52,10 +52,6 @@ export class GraphOid extends OidUI {
     this._graph.addPiece(type, piece)
   }
 
-  cleanGraph () {
-    this._graph.cleanGraph()
-  }
-
   importGraph (graphObj) {
     if (this._graph != null) {
       this._graph.importGraph(graphObj)
@@ -73,7 +69,11 @@ export class GraphOid extends OidUI {
   }
 
   handleAddEdge (topic, message) {
-    this._graph.addPiece('edge', new GraphEdge(message, this))
+    this._graph.addPiece('edge', GraphEdge.create(message, this._graph))
+  }
+
+  handleClearGraph () {
+    this._graph.clearGraph()
   }
 }
 
@@ -89,7 +89,8 @@ Oid.component({
   },
   receive: {
     'node/add': 'handleAddNode',
-    'edge/add': 'handleAddEdge'
+    'edge/add': 'handleAddEdge',
+    'graph/clear': 'handleClearGraph'
   },
   implementation: GraphOid,
   stylesheets: 'stylesheets:oid-graph.css',

@@ -4,9 +4,9 @@
 import { GraphPiece } from './piece'
 
 export class GraphEdge extends GraphPiece {
-  static create (edge, graph, layout ) {
+  static create (edge, graph) {
     let edgeObj = null
-    const lyt = (layout != null) ? layout : 'dg'
+    const lyt = (graph._layout.label != null) ? graph._layout.label : 'dg'
     switch (lyt) {
       case 'dg': edgeObj = new GraphEdge(edge, graph); break
       case 'vh': edgeObj = new GraphEdgeVH(edge, graph)
