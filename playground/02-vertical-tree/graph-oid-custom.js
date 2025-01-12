@@ -1,4 +1,5 @@
-import { Oid } from '/pack/oid-graph-dev.js'
+import { Oid } from '/lib/foundation/oidlib-dev.js'
+export { GraphOid } from '/lib/graph/oid-graph-dev.js'
 
 Oid.customize('goid:graph', {
   cid: 'example',
